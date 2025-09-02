@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import CircularMenu3D from './components/CircularMenu3D'
 
 function App() {
   const [activeSection, setActiveSection] = useState('')
@@ -26,36 +27,9 @@ function App() {
         </div>
       </div>
 
-      {/* Circular Navigation Menu */}
+      {/* 3D Circular Navigation Menu */}
       <div className="fixed bottom-16 right-16">
-        <div 
-          className="w-48 h-48 rounded-full flex items-center justify-center relative"
-          style={{ backgroundColor: '#FF7F7F' }}
-        >
-          {/* Menu Items */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <button
-                onClick={() => handleMenuClick('about')}
-                className="block text-gray-800 hover:text-gray-600 transition-colors duration-200 text-lg font-medium"
-              >
-                About
-              </button>
-              <button
-                onClick={() => handleMenuClick('work')}
-                className="block text-gray-800 hover:text-gray-600 transition-colors duration-200 text-lg font-medium"
-              >
-                Work
-              </button>
-              <button
-                onClick={() => handleMenuClick('contact')}
-                className="block text-gray-800 hover:text-gray-600 transition-colors duration-200 text-lg font-medium"
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-        </div>
+        <CircularMenu3D onMenuClick={handleMenuClick} />
       </div>
     </div>
   )
